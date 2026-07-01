@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotex AI Market Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>📊 Quotex AI মার্কেট অ্যানালাইজার</h2>
+        <p class="subtitle">আপনার ১ মিনিটের চার্ট স্ক্রিনশট আপলোড করুন এবং এআই প্রেডিকশন দেখুন।</p>
+
+        <div class="upload-box">
+            <input type="file" id="imageInput" accept="image/*" hidden>
+            <label for="imageInput" class="upload-label">
+                <span class="icon">📸</span>
+                <span>এখানে স্ক্রিনশট আপলোড করুন</span>
+            </label>
+            <div id="previewContainer" class="hidden">
+                <img id="imagePreview" src="" alt="Market Screenshot">
+            </div>
+        </div>
+
+        <button id="analyzeBtn" class="btn">মার্কেট অ্যানালাইসিস করুন</button>
+
+        <div id="resultBox" class="result-box hidden">
+            <h3>📈 অ্যানালাইসিস রিপোর্ট (১ মিনিট)</h3>
+            <hr>
+            <div class="prediction">
+                <p>মার্কেট মুভমেন্ট সম্ভাবনা:</p>
+                <div class="percentage-bar">
+                    <div class="up-bar" id="upBar" style="width: 0%;">UP: 0%</div>
+                    <div class="down-bar" id="downBar" style="width: 0%;">DOWN: 0%</div>
+                </div>
+            </div>
+            <p id="decisionText" class="decision"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
