@@ -10,24 +10,27 @@
 
     <div class="container">
         <h2>📊 Quotex AI মার্কেট অ্যানালাইজার</h2>
-        <p class="subtitle">আপনার ১ মিনিটের চার্ট স্ক্রিনশট আপলোড করুন এবং এআই প্রেডিকশন দেখুন।</p>
+        <p class="subtitle">নিচের লাইভ ক্যামেরার সামনে চার্টটি ধরুন এবং স্ন্যাপশট নিন।</p>
 
-        <div class="upload-box">
-            <input type="file" id="imageInput" accept="image/*" hidden>
-            <label for="imageInput" class="upload-label">
-                <span class="icon">📸</span>
-                <span>এখানে স্ক্রিনশট আপলোড করুন</span>
-            </label>
+        <!-- লাইভ ক্যামেরা ও প্রিভিউ বক্স -->
+        <div class="camera-box">
+            <video id="webcam" autoplay playsinline></video>
+            <canvas id="canvas" style="display:none;"></canvas>
             <div id="previewContainer" class="hidden">
-                <img id="imagePreview" src="" alt="Market Screenshot">
+                <img id="imagePreview" src="" alt="Captured Market">
             </div>
         </div>
 
-        <button id="analyzeBtn" class="btn">মার্কেট অ্যানালাইসিস করুন</button>
+        <!-- কন্ট্রোল বাটন সমূহ -->
+        <div class="button-group">
+            <button id="captureBtn" class="btn capture-btn">📸 স্ন্যাপশট তুলুন</button>
+            <button id="analyzeBtn" class="btn analyze-btn hidden">🚀 মার্কেট অ্যানালাইসিস করুন</button>
+            <button id="retakeBtn" class="btn retake-btn hidden">🔄 আবার তুলুন</button>
+        </div>
 
+        <!-- অ্যানালাইসিস রেজাল্ট -->
         <div id="resultBox" class="result-box hidden">
             <h3>📈 অ্যানালাইসিস রিপোর্ট (১ মিনিট)</h3>
-            <hr>
             <div class="prediction">
                 <p>মার্কেট মুভমেন্ট সম্ভাবনা:</p>
                 <div class="percentage-bar">
